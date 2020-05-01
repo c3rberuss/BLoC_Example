@@ -1,4 +1,4 @@
-import 'package:blocexample/src/blocs/bloc.dart' as fBloc;
+import 'package:blocexample/src/blocs/form/bloc.dart' as fBloc;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

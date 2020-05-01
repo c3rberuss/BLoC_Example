@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import './bloc.dart';
+import 'bloc.dart';
 import 'form_state.dart';
 
 class FormBloc extends Bloc<FormEvent, FormState> {
