@@ -1,4 +1,5 @@
 import 'package:blocexample/src/blocs/form/bloc.dart' as fBloc;
+import 'package:blocexample/src/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +14,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // ignore: close_sinks
     final _bloc = BlocProvider.of<fBloc.FormBloc>(context);
 
@@ -38,30 +38,30 @@ class HomeScreen extends StatelessWidget {
                   controller: _nameController,
                   focusNode: _nameFocus,
                   keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelText: "Name"
-                  ),
+                  decoration: InputDecoration(labelText: "Name"),
                 ),
                 TextField(
                   controller: _emailController,
                   focusNode: _emailFocus,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    labelText: "Email"
-                  ),
+                  decoration: InputDecoration(labelText: "Email"),
                 ),
                 TextField(
                   controller: _ageController,
                   focusNode: _ageFocus,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    labelText: "Age"
-                  ),
+                  decoration: InputDecoration(labelText: "Age"),
                 ),
               ],
             ),
           );
-        }
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.location_on),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (ctx) => MapScreen()));
+        },
       ),
     );
   }

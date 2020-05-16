@@ -1,4 +1,5 @@
 import 'package:blocexample/src/presentation/screens/home_screen.dart';
+import 'package:flare_splash_screen/flare_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +14,13 @@ class App extends StatelessWidget {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: SplashScreen.navigate(
+          name: 'assets/todo.flr',
+          next: (context) => HomeScreen(),
+          until: () => Future.delayed(Duration(seconds: 5)),
+          startAnimation: 'start',
+          loopAnimation: 'start',
+        ),
       ),
     );
   }
